@@ -11,6 +11,8 @@ app.get('/long-request', async (req, res) => {
   res.send('Completed wait...');
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+setTimeout(() => {
+  app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`);
+  });
+}, 10000);
