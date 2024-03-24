@@ -6,6 +6,11 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+app.get('/long-request', async (req, res) => {
+  await new Promise((resolve) => setTimeout(resolve, 10000));
+  res.send('Completed wait...');
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
